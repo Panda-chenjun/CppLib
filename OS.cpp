@@ -34,6 +34,3 @@ class IS{
 	auto& operator>>(long long& x){fn("%lld",&x);return*this;}
 	auto& operator>>(short& x){fn("%d",&x);return*this;}
 }Cin;
-int main(){
-	
-}
