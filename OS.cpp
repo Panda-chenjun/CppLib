@@ -15,7 +15,7 @@ class OS{
 	auto& operator<<(const char* x){fn("%s",x);return*this;}
 	OS& operator<<(const short& x){fn("%d",x);return*this;}
 	OS& operator<<(std::string str){
-		for(auto x : str) fn("%c",x);
+		return *this<<str.data();
 	}
 	template<const unsigned long long N> 
 	OS& operator<<(std::bitset<N> t){
@@ -33,4 +33,16 @@ class IS{
 	auto& operator>>(double& x){fn("%lf",&x);return*this;}
 	auto& operator>>(long long& x){fn("%lld",&x);return*this;}
 	auto& operator>>(short& x){fn("%d",&x);return*this;}
+	auto& operator>>(std::string& str){
+		str.clear();
+		char ch;
+		while(1){fn("%c",&ch);if(ch=='\n'||ch==' '||ch=='\t')break;str.push_back(ch);}
+		return*this;
+	}
 }Cin;
+int main(){
+	std::string str;
+	Cin>>str;
+	printf("%s\n",str.c_str());
+	Cout<<str.c_str();
+}
