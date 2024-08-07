@@ -40,9 +40,3 @@ class IS{
 		return*this;
 	}
 }Cin;
-int main(){
-	std::string str;
-	Cin>>str;
-	printf("%s\n",str.c_str());
-	Cout<<str.c_str();
-}
