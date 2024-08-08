@@ -1,8 +1,13 @@
 #define OS_H
+#define BEGIN namespace std{
+#define END }
 #include<stdio.h>
 #include<string>
 #include<bitset>
 #define f(type,c) auto& operator<<(const type& x){fn(c,x);return*this;}
+
+BEGIN
+
 class OS{
 	private:
 	int (*fn)(const char*,...) = printf;
@@ -40,3 +45,5 @@ class IS{
 		return*this;
 	}
 }Cin;
+
+END
