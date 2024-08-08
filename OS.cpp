@@ -41,7 +41,10 @@ class IS{
 	auto& operator>>(std::string& str){
 		str.clear();
 		char ch;
-		while(1){fn("%c",&ch);if(ch=='\n'||ch==' '||ch=='\t')break;str.push_back(ch);}
+		while(1){
+			fn("%c",&ch);if(ch=='\n'||ch==' '||ch=='\t')break;
+			str.push_back(ch);
+		}
 		return*this;
 	}
 }Cin;
