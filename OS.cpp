@@ -4,7 +4,6 @@
 #include<stdio.h>
 #include<string>
 #include<bitset>
-#define f(type,c) auto& operator<<(const type& x){fn(c,x);return*this;}
 
 BEGIN
 
