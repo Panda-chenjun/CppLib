@@ -33,11 +33,12 @@ class OS{
 	}
 	template<const unsigned long long N> 
 	OS& operator<<(const std::bitset<N>& t){
-		for(int i=0;i<N;i++)
+		for(int i=N-1;i>=0;i--)
 			fn("%d",t[i]);
+		return *this;
 	}
 	OS& operator<<(const __int128& x){
-		if(x>10)
+		if(x>=10)
 			*this<<(x/10);
 		return *this<<int(x%10);
 	}
