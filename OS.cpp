@@ -28,25 +28,4 @@ class OS{
 			fn("%d",t[i]);
 	}
 }Cout;
-class IS{
-	private:
-	int (*fn)(const char*,...) = scanf;
-	public:
-	auto& operator>>(int& x){fn("%d",&x);return*this;}
-	auto& operator>>(char& x){fn("%c",&x);return*this;}
-	auto& operator>>(float& x){fn("%f",&x);return*this;}
-	auto& operator>>(double& x){fn("%lf",&x);return*this;}
-	auto& operator>>(long long& x){fn("%lld",&x);return*this;}
-	auto& operator>>(short& x){fn("%d",&x);return*this;}
-	auto& operator>>(std::string& str){
-		str.clear();
-		char ch;
-		while(1){
-			fn("%c",&ch);if(ch=='\n'||ch==' '||ch=='\t')break;
-			str.push_back(ch);
-		}
-		return*this;
-	}
-}Cin;
-
 END
