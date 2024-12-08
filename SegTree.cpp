@@ -1,4 +1,8 @@
 #include<stdexcept>
+/**
+ * @file cpplib/SegTree
+ * @brief O(n log^2 n)
+ */
 // ------SegTree-------
 namespace std
 {
