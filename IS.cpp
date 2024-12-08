@@ -39,6 +39,6 @@ class IS{
 			x+=ch;
 		}
 	}
-}Cout;
+}Cin;
 
 END
