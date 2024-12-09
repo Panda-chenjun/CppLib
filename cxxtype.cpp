@@ -1,5 +1,10 @@
-#include<bits/stdc++.h>
 using ll = long long;
 using ull = unsigned long long;
 using lf = double;
 using llf = long double;
+using cstring = const char *;
+using fll = inline long long;
+using full = inline unsigned long long;
+using flf = inline double;
+using fllf = inline long double;
+using fcstring = inline const char *;
