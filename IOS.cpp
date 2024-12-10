@@ -1,2 +1,3 @@
 #include"IS.cpp"
 #include"OS.cpp"
+using namespace std;

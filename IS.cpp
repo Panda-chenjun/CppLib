@@ -1,4 +1,4 @@
-#define OS_H
+#define _FASTIN_H
 #define BEGIN namespace std{
 #define END }
 #include<stdio.h>
