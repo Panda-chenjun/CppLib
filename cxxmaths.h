@@ -1,4 +1,4 @@
-#include"cxxtype.cpp"
+#include"cxxtype.h"
 template<class Func>
 ll __pow(ll base,ll k,Func f){
 	ll ans=1;

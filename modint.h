@@ -1,6 +1,6 @@
-#include"IOS.cpp"
-#include"cxxtype.cpp"
-#include"cxxmaths.cpp"
+#include"IOS.h"
+#include"cxxtype.h"
+#include"cxxmaths.h"
 template<ull P>
 class modint{
 	private:
