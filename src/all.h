@@ -1,5 +1,0 @@
-#include"cxxmaths.h"
-#include"cxxtype.h"
-#include"IOS.h"
-#include"modint.h"
-#include"SegTree.h"
