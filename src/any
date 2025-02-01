@@ -1,0 +1,42 @@
+#ifndef __GNU_CXX_EXLIB_ANY
+#define __GNU_CXX_EXLIB_ANY
+
+#include <stdexcept>
+namespace exstd
+{
+
+class bad_any_cast : public std::bad_cast
+{
+	public:
+		bad_any_cast() : std::bad_cast() {}
+		virtual const char* what() const throw(){
+			return "bad_any_cast: failed conversion using any_cast";
+		}
+};
+
+class any{
+	private:
+		void* _M_ptr;
+		const char* _M_type=typeid(void).name();
+	public:
+		any() : _M_ptr(nullptr) {}
+		template<typename T>
+		any& operator=(const T value){
+			_M_ptr=new T(value);
+			_M_type=typeid(T).name();
+			return *this;
+		}
+		const char* type() const{
+			return _M_type;
+		}
+		template<typename T>
+		const T cast() const{
+			if(typeid(T).name()!=_M_type)
+				throw bad_any_cast();
+			return *static_cast<T*>(_M_ptr);
+		}
+};
+
+}
+
+#endif // __GNU_CXX_EXLIB_ANY
