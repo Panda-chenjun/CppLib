@@ -24,6 +24,9 @@
 
 #include "c++config.h"
 
+namespace exstd
+{
+
 // mod-Pow for interger.
 _EXLIB_CXX17_CONSTEXPR
 inline long long
@@ -80,4 +83,6 @@ _EXLIB_CXX11_CONSTEXPR
 inline unsigned long long
 __builtin_log2ll(unsigned long long v){
 	return int(sizeof(v)) * 8 - __builtin_clzll(v) - 1;
+}
+
 }
