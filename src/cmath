@@ -1,18 +1,83 @@
-#define LLONG_MAX 9223372036854775807LL
-/// @brief Pow for interger.
-long long pow(long long base,long long K,long long P=LLONG_MAX){
-	long long ans=1;
-	while(K){
-		if(K&1)
-			base=(base*base)%P;
-		ans=(ans*base)%P;
-		K>>=1;
+// <cmath> -*- C++ -*-
+
+// Copyright (C) 2001-2023 Free Software Foundation, Inc.
+//
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
+// terms of the GNU General Public License as published by the
+// Free Software Foundation; either version 3, or (at your option)
+// any later version.
+
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// Under Section 7 of GPL version 3, you are granted additional
+// permissions described in the GCC Runtime Library Exception, version
+// 3.1, as published by the Free Software Foundation.
+
+// You should have received a copy of the GNU General Public License and
+// a copy of the GCC Runtime Library Exception along with this program;
+// see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+// <http://www.gnu.org/licenses/>.
+
+#include "c++config.h"
+
+// mod-Pow for interger.
+_EXLIB_CXX17_CONSTEXPR
+inline long long
+pow(long long base, long long K, long long P){
+	long long ans = 1;
+	while (K)
+	{
+		if (K & 1)
+			base = (base * base) % P;
+		ans = (ans * base) % P ;
+		K >>= 1;
 	}
-	return ans%P;
+	return ans % P;
 }
-unsigned int __builtin_lowbit(unsigned int v){
-	return v&-v;
+
+// Pow for interger.
+_EXLIB_CXX17_CONSTEXPR
+inline long long
+pow(long long base, long long K){
+	long long ans = 1;
+	while (K)
+	{
+		if (K & 1)
+			base = base * base;
+		ans = ans * base;
+		K >>= 1;
+	}
+	return ans;
 }
-unsigned long long __builtin_lowbit(unsigned long long v){
-	return v&-v;
+
+// lowbit for 32-bit.
+_EXLIB_CXX11_CONSTEXPR
+inline unsigned int
+__builtin_lowbit(unsigned int v){
+	return v & -v;
+}
+
+// lowbit for 64-bit.
+_EXLIB_CXX11_CONSTEXPR
+inline unsigned long long
+__builtin_lowbitll(unsigned long long v){
+	return v & -v;
+}
+
+// log2 for 32-bit.
+_EXLIB_CXX11_CONSTEXPR
+inline unsigned int
+__builtin_log2(unsigned int v){
+	return int(sizeof(v)) * 8 - __builtin_clz(v) - 1;
+}
+
+// log2 for 64-bit.
+_EXLIB_CXX11_CONSTEXPR
+inline unsigned long long
+__builtin_log2ll(unsigned long long v){
+	return int(sizeof(v)) * 8 - __builtin_clzll(v) - 1;
 }
