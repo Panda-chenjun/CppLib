@@ -22,6 +22,9 @@
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
+#ifndef __EX_CMATH
+#define __EX_CMATH
+
 #include "c++config.h"
 
 namespace exstd
@@ -86,3 +89,5 @@ __builtin_log2ll(unsigned long long v){
 }
 
 }
+
+#endif // __EX_CMATH
