@@ -43,4 +43,4 @@
 #define _EXLIB_CXX17_CONSTEXPR
 #endif // C++17
 
-#endif
+#endif // __EX_CONFIG_H
