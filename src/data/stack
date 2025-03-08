@@ -54,6 +54,10 @@ template<typename _Tp,typename Contianer=std::vector<_Tp>>
 				{return c.at(_N);}
 			void pop()
 				{c.pop_back();}
+			auto push(const value_type& x)
+				{c.push_back(x);}
+			auto push(value_type&& x)
+				{c.push_back(x);}
 	};
 
 }
