@@ -25,13 +25,13 @@
 #ifndef __EX_CMATH
 #define __EX_CMATH
 
-#include "c++config.h"
+#include <bits/c++config.h>
 
 namespace exstd
 {
 
 // mod-Pow for interger.
-_EXLIB_CXX17_CONSTEXPR
+_GLIBCXX17_CONSTEXPR
 inline long long
 pow(long long base, long long K, long long P){
 	long long ans = 1;
@@ -46,7 +46,7 @@ pow(long long base, long long K, long long P){
 }
 
 // Pow for interger.
-_EXLIB_CXX17_CONSTEXPR
+_GLIBCXX17_CONSTEXPR
 inline long long
 pow(long long base, long long K){
 	long long ans = 1;
@@ -61,28 +61,28 @@ pow(long long base, long long K){
 }
 
 // lowbit for 32-bit.
-_EXLIB_CXX11_CONSTEXPR
+_GLIBCXX_CONSTEXPR
 inline unsigned int
 __builtin_lowbit(unsigned int v){
 	return v & -v;
 }
 
 // lowbit for 64-bit.
-_EXLIB_CXX11_CONSTEXPR
+_GLIBCXX_CONSTEXPR
 inline unsigned long long
 __builtin_lowbitll(unsigned long long v){
 	return v & -v;
 }
 
 // log2 for 32-bit.
-_EXLIB_CXX11_CONSTEXPR
+_GLIBCXX_CONSTEXPR
 inline unsigned int
 __builtin_log2(unsigned int v){
 	return int(sizeof(v)) * 8 - __builtin_clz(v) - 1;
 }
 
 // log2 for 64-bit.
-_EXLIB_CXX11_CONSTEXPR
+_GLIBCXX_CONSTEXPR
 inline unsigned long long
 __builtin_log2ll(unsigned long long v){
 	return int(sizeof(v)) * 8 - __builtin_clzll(v) - 1;
