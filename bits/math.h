@@ -33,59 +33,65 @@ namespace exstd
 // mod-Pow for interger.
 _GLIBCXX17_CONSTEXPR
 inline long long
-pow(long long base, long long K, long long P){
-	long long ans = 1;
-	while (K)
-	{
-		if (K & 1)
-			base = (base * base) % P;
-		ans = (ans * base) % P ;
-		K >>= 1;
-	}
-	return ans % P;
+pow (long long base, long long K, long long P)
+{
+  long long ans = 1;
+  while (K)
+    {
+      if (K & 1)
+        base = (base * base) % P;
+      ans = (ans * base) % P;
+      K >>= 1;
+    }
+  return ans % P;
 }
 
 // Pow for interger.
 _GLIBCXX17_CONSTEXPR
 inline long long
-pow(long long base, long long K){
-	long long ans = 1;
-	while (K)
-	{
-		if (K & 1)
-			base = base * base;
-		ans = ans * base;
-		K >>= 1;
-	}
-	return ans;
+pow (long long base, long long K)
+{
+  long long ans = 1;
+  while (K)
+    {
+      if (K & 1)
+        base = base * base;
+      ans = ans * base;
+      K >>= 1;
+    }
+  return ans;
 }
 
 // lowbit for 32-bit.
 _GLIBCXX_CONSTEXPR
 inline unsigned int
-__builtin_lowbit(unsigned int v){
-	return v & -v;
+__builtin_lowbit (unsigned int v)
+{
+  return v & -v;
 }
 
 // lowbit for 64-bit.
 _GLIBCXX_CONSTEXPR
 inline unsigned long long
-__builtin_lowbitll(unsigned long long v){
-	return v & -v;
+__builtin_lowbitll (unsigned long long v)
+{
+  return v & -v;
 }
 
 // log2 for 32-bit.
 _GLIBCXX_CONSTEXPR
 inline unsigned int
-__builtin_log2(unsigned int v){
-	return int(sizeof(v)) * 8 - __builtin_clz(v) - 1;
+__builtin_log2 (unsigned int v)
+{
+  return int (sizeof (v)) * 8 - __builtin_clz (v) - 1;
 }
 
 // log2 for 64-bit.
 _GLIBCXX_CONSTEXPR
 inline unsigned long long
-__builtin_log2ll(unsigned long long v){
-	return int(sizeof(v)) * 8 - __builtin_clzll(v) - 1;
+__builtin_log2ll (unsigned long long v)
+{
+  return int (sizeof (v)) * 8 - __builtin_clzll (v) - 1;
 }
 
 }

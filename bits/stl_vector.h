@@ -22,42 +22,8 @@
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
-#include<vector>
 #include<type_traits>
 
 namespace exstd {
-
-template<typename _Tp,typename Contianer=std::vector<_Tp>>
-	class stack
-	{
-		public:
-			typedef typename Contianer::value_type	value_type;
-			typedef typename Contianer::iterator	iterator;
-		protected:
-			Contianer c;
-		public:
-			size_t size()
-				{return c.size();}
-			bool empty()
-				{return c.empty();}
-			value_type* data()
-				{return c.data();}
-			iterator begin()
-				{return c.begin();}			
-			iterator end()
-				{return c.end();}
-			value_type& top()
-				{return c.back();}
-			value_type& at(size_t _N)
-				{return c.at(_N);}		
-			value_type& operator[](size_t _N)
-				{return c.at(_N);}
-			void pop()
-				{c.pop_back();}
-			auto push(const value_type& x)
-				{c.push_back(x);}
-			auto push(value_type&& x)
-				{c.push_back(x);}
-	};
 
 }
