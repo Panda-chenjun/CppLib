@@ -22,13 +22,3 @@
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
-#ifndef __EX_STDIO_H
-#define __EX_STDIO_H
-
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
-
-
-#endif // __EX_STDIO_H
