@@ -1,9 +1,9 @@
-// <stdio.h> -*- C++ -*-
+// <libex/bits/math_impl.cc> -*- C++ -*-
 
 // Copyright (C) 2001-2023 Free Software Foundation, Inc.
 //
-// This file is part of the GNU ISO C++ extended-Library.  This library
-// is free software; you can redistribute it and/or modify it under the
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
 // terms of the GNU General Public License as published by the
 // Free Software Foundation; either version 3, or (at your option)
 // any later version.
@@ -22,23 +22,17 @@
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
-#pragma GCC system_header
+#include <bits/c++config.h>
+#include <ext/type_traits.h>
 
-#ifndef EX_STDIO
-#define EX_STDIO
+template <typename Integer>
+constexpr bool is_prime(Integer x) noexcept {
+	static_assert(
+		std::__is_integer<Integer>::__value,
+		"Function `is_prime` is only for integer.");
+	for(Integer i=2;i*i<=x;i++)
+		if(x%i==0)
+			return 1;
+	return 0;
+}
 
-#include <stdio.h>
-#include <algorithm> // for std::reverse<>
-
-/**
- * std-in `get` function.
- * Using example :`int res = get<int>();`
- * @note You will not use this template function
- * (but specialized) if you use a support_type.
- */
-
-template <typename _Unsupport_type>
-const _Unsupport_type get() = delete;
-
-
-#endif // EX_STDIO

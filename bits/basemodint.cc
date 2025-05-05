@@ -1,9 +1,9 @@
-// <stdio.h> -*- C++ -*-
+// <libex/bits/basemodint.cc> -*- C++ -*-
 
 // Copyright (C) 2001-2023 Free Software Foundation, Inc.
 //
-// This file is part of the GNU ISO C++ extended-Library.  This library
-// is free software; you can redistribute it and/or modify it under the
+// This file is part of the GNU ISO C++ Library.  This library is free
+// software; you can redistribute it and/or modify it under the
 // terms of the GNU General Public License as published by the
 // Free Software Foundation; either version 3, or (at your option)
 // any later version.
@@ -22,23 +22,21 @@
 // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
 // <http://www.gnu.org/licenses/>.
 
-#pragma GCC system_header
-
-#ifndef EX_STDIO
-#define EX_STDIO
-
-#include <stdio.h>
-#include <algorithm> // for std::reverse<>
-
 /**
- * std-in `get` function.
- * Using example :`int res = get<int>();`
- * @note You will not use this template function
- * (but specialized) if you use a support_type.
- */
-
-template <typename _Unsupport_type>
-const _Unsupport_type get() = delete;
+ * @file basemodint.cc
+ * Don't use thie file directly.
+*/
 
 
-#endif // EX_STDIO
+template <unsigned long long P>  
+struct _Modint_base {
+	typedef unsigned long long	value_t;
+	value_t value;
+	_Modint_base()
+	:value(0) { }
+	_Modint_base(value_t nvalue)
+	:value(nvalue) { }
+#define _Modint_base_operator_defines(op,returns) \
+	_Modint_base operator op (_Modint_base __rhs) \
+		{return returns;}
+};
